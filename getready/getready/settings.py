@@ -20,8 +20,8 @@ NEWSPIDER_MODULE = 'getready.spiders'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
-SCHEDULER = "getready.scheduler.Scheduler"
-DUPEFILTER_CLASS = "getready.dupefilter.RFPDupeFilter"
+# SCHEDULER = "getready.scheduler.Scheduler"
+# DUPEFILTER_CLASS = "getready.dupefilter.RFPDupeFilter"
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -66,14 +66,14 @@ DUPEFILTER_CLASS = "getready.dupefilter.RFPDupeFilter"
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   'getready.pipelines.GetreadyPipeline': 300,
-}
-
-REDIS_URL = 'redis://111.231.82.173:6379'
-REDIS_HOST = '111.231.82.173'
-
-REDIS_PORT = 6379
+# ITEM_PIPELINES = {
+#    'getready.pipelines.GetreadyPipeline': 300,
+# }
+#
+# REDIS_URL = 'redis://111.231.82.173:6379'
+# REDIS_HOST = '111.231.82.173'
+#
+# REDIS_PORT = 6379
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
