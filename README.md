@@ -20,7 +20,9 @@ start websocket server
 ![demo](https://github.com/jinjin123/GetReady/macclient.png)
 ![demo](https://github.com/jinjin123/GetReady/recivedmsg.png)
 
-
+#client
+source venv/bin/activate
+python ScmGUI.py
 ########
 
 
