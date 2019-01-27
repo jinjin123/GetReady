@@ -69,7 +69,7 @@ class Client(QDialog):
         self.serverLineEdit = QTextEdit()
         self.serverLineEdit.setPlaceholderText('服务器发送的消息会显示在这里')
 
-        self.sendTextEdit = QLineEdit()
+        self.sendTextEdit = QTextEdit()
         self.sendTextEdit.setPlaceholderText('请输入先要发送给服务器的消息')
 
         hostLabel.setBuddy(self.hostCombo)
@@ -132,7 +132,7 @@ class Client(QDialog):
         mainLayout.addWidget(self.serverLineEdit, 5, 1, 5, 5)
         mainLayout.addWidget(self.sendMsgLabel,10,0)
         mainLayout.addWidget(self.sendTextEdit,10,1,5,5)
-        mainLayout.addWidget(self.sendMsgbutton, 13, 0,6,6)
+        mainLayout.addWidget(self.sendMsgbutton, 15, 0,6,6)
         self.serverLineEdit.setEnabled(True)
         self.serverMsgLable.setVisible(False)
         self.serverLineEdit.setVisible(False)

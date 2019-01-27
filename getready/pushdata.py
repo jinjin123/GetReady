@@ -19,11 +19,13 @@ class Saber:
 					if len(time['product']) > 0:
 						for p in time['product']:
 							content += p.encode('utf-8') + '\n'
-					ws.send(content)
-			t=Timer(1800,HandleData)
+						ws.send(content)
+			t=Timer(3,HandleData)
 			t.start()
 		HandleData()
 
+    def on_error(self,error):
+	print error
 
     def on_close(self,ws):
 	ws.close()
@@ -32,6 +34,7 @@ if __name__ == '__main__':
     saber = Saber()
     websocket.enableTrace(False)
     ws = websocket.WebSocketApp("ws://" + 'localhost' + ":5000/",
+                              on_error = saber.on_error,
                               on_close = saber.on_close)
 
     ws.on_open = saber.on_open
