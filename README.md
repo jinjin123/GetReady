@@ -16,8 +16,10 @@ pip3.5 install  pyqt5
 start websocket server
 ./chat &
 
-###schema
-![demo](https://github.com/jinjin123/GetReady/blob/master/cartoon.pdf)
+###schema link
+(https://github.com/jinjin123/GetReady/blob/master/cartoon.pdf)
+
+####demo
 ![demo](https://github.com/jinjin123/GetReady/blob/master/macclient.png)
 ![demo](https://github.com/jinjin123/GetReady/blob/master/recivedmsg.png)
 
@@ -27,6 +29,7 @@ python ScmGUI.py
 
 ###[ home windows7 python2.7 pywin32  and code ]
 (https://github.com/jinjin123/VirtualOpeation)
+
 ########
 
 ```
