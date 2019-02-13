@@ -15,6 +15,8 @@ from PyQt5.QtNetwork import (QAbstractSocket, QHostInfo, QNetworkConfiguration,
         )
 
 
+
+
 class Client(QDialog):
     def __init__(self, parent=None):
         super(Client, self).__init__(parent)
@@ -22,7 +24,7 @@ class Client(QDialog):
         self.networkSession = None
         self.blockSize = 0
         self.currentFortune = ''
-        self.title = "动漫日剧通知程序"
+        self.title = "动漫日剧通知下载程序"
 
         hostLabel = QLabel('IP：')
         hostLabel.setFont(qtawesome.font('fa', 14))
@@ -42,6 +44,7 @@ class Client(QDialog):
         name = QHostInfo.localHostName()
         if name != '':
             self.hostCombo.addItem(name)
+            self.hostCombo.addItem('111.231.82.173')
 
             domain = QHostInfo.localDomainName()
             if domain != '':
@@ -66,11 +69,15 @@ class Client(QDialog):
         # self.taskLineEdit.setPlaceholderText("请向组长询问后输入任务码")
         # self.taskLineEdit.setValidator(QIntValidator(1, 9999, self))
 
-        self.serverLineEdit = QTextEdit()
-        self.serverLineEdit.setPlaceholderText('服务器发送的消息会显示在这里')
+        #self.serverLineEdit = QTextEdit()
+        #self.serverLineEdit.setPlaceholderText('服务器发送的消息会显示在这里')
+        self.serverLineEdit = QComboBox()
+        self.serverLineEdit.setEditable(True)
 
-        self.sendTextEdit = QTextEdit()
-        self.sendTextEdit.setPlaceholderText('请输入先要发送给服务器的消息')
+        self.sendTextEdit = QComboBox()
+        self.sendTextEdit.setEditable(True)
+        #self.sendTextEdit = QTextEdit()
+        #self.sendTextEdit.setPlaceholderText('请输入先要发送给服务器的消息')
 
         hostLabel.setBuddy(self.hostCombo)
         portLabel.setBuddy(self.portLineEdit)
@@ -105,6 +112,7 @@ class Client(QDialog):
         buttonBox.addButton(quitButton, QDialogButtonBox.RejectRole)
         self.sendMsgbutton = QPushButton('发送消息')
         self.webSocket = QWebSocket()
+        self.changeMsg = QWebSocket()
 
         self.hostCombo.editTextChanged.connect(self.enableGetFortuneButton)
         self.portLineEdit.textChanged.connect(self.enableGetFortuneButton)
@@ -116,7 +124,11 @@ class Client(QDialog):
         self.webSocket.disconnected.connect(self.webSocketDisconnect)
         self.webSocket.error.connect(self.displayError)
         self.webSocket.textMessageReceived.connect(self.webSocketMessageReceived)
-        self.sendTextEdit.textChanged.connect(self.enableSendMessageButton)
+        self.changeMsg.connected.connect(self.websocketConnect)
+        self.changeMsg.disconnected.connect(self.webSocketDisconnect)
+        self.changeMsg.error.connect(self.displayError)
+        # self.sendTextEdit.textChanged.connect(self.enableSendMessageButton)
+        self.sendTextEdit.editTextChanged.connect(self.enableSendMessageButton)
         self.sendMsgbutton.clicked.connect(self.sendMsgToServer)
 
         mainLayout = QGridLayout()
@@ -129,9 +141,9 @@ class Client(QDialog):
         mainLayout.addWidget(self.statusLabel, 3, 0, 1, 2)
         mainLayout.addWidget(buttonBox, 4, 0, 1, 2)
         mainLayout.addWidget(self.serverMsgLable,5,0)
-        mainLayout.addWidget(self.serverLineEdit, 5, 1, 5, 5)
+        mainLayout.addWidget(self.serverLineEdit, 5, 0, 5, 5)
         mainLayout.addWidget(self.sendMsgLabel,10,0)
-        mainLayout.addWidget(self.sendTextEdit,10,1,5,5)
+        mainLayout.addWidget(self.sendTextEdit,10,0,5,5)
         mainLayout.addWidget(self.sendMsgbutton, 15, 0,6,6)
         self.serverLineEdit.setEnabled(True)
         self.serverMsgLable.setVisible(False)
@@ -163,11 +175,21 @@ class Client(QDialog):
             self.networkSession.open()
 
     def enableSendMessageButton(self):
-        self.sendMsgbutton.setEnabled(self.sendTextEdit.toPlainText()!= '')
+        # self.sendMsgbutton.setEnabled(self.sendTextEdit.toPlainText()!= '')
+        self.sendMsgbutton.setEnabled(
+            (self.networkSession is None or self.networkSession.isOpen())
+            # and self.hostCombo.currentText() != ''
+            # and self.portLineEdit.text() != ''
+            # and self.taskLineEdit.text() != ''
+        )
 
     def sendMsgToServer(self):
-        message =self.sendTextEdit.toPlainText()
-        self.webSocket.sendTextMessage(message)
+        # message =self.sendTextEdit.toPlainText()
+        message =self.sendTextEdit.currentText()
+        # url = QUrl('ws://0.0.0.0:5000/')
+        # self.changeMsg.open(url)
+        self.changeMsg.sendTextMessage(message)
+        # self.webSocket.sendTextMessage(message)
 
     def CreateNewConn(self):
         '''
@@ -183,7 +205,9 @@ class Client(QDialog):
         # task_code = self.taskLineEdit.text()
         # format_url = 'ws://{}:{}/websocket/master/{}/{}'.format(host,port,'xiangjqjngkljjkl12345',task_code)
         format_url = 'ws://{}:{}/'.format(host,port)
-        request_url = QUrl(format_url);
+        request_url = QUrl(format_url)
+        url = QUrl('ws://0.0.0.0:4000/')
+        self.changeMsg.open(url)
         self.webSocket.open(request_url)
 
     def stopCurrentConn(self):
@@ -258,9 +282,15 @@ class Client(QDialog):
     def webSocketMessageReceived(self,p_str):
         if p_str:
             notify("关注的动漫日剧已更新", "关注的动漫日剧已更新")
-        self.serverLineEdit.setText(p_str)
+        self.serverLineEdit.clear()
+        self.sendTextEdit.clear()
+        for i in p_str.split(','):
+            self.serverLineEdit.addItem(i)
+            self.sendTextEdit.addItem(i)
+        # self.serverLineEdit.setText(p_str)
         # self.statusLabel.setText('接收到消息'+p_str)
         print ("webSocketMessageReceived"+p_str)
+
 
 def notify(title, text):
     os.system("""

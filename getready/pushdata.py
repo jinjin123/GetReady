@@ -11,12 +11,12 @@ def on_open(ws):
 		content = ''
 		f = json.load(io.open("output.json", encoding='utf-8'))
 		for time in f:
-			if time['time'].encode('utf-8').find("今日") > -1:
-				if len(time['product']) > 0:
-					for p in time['product']:
-						content += p.encode('utf-8') + '\n'
-					ws.send(content)
-		t=Timer(3,HandleData)
+			#if time['time'].encode('utf-8').find("今日") > -1:
+			if time['title']:
+					# for p in time['product']:
+				content += time['title'].encode('utf-8') + ','
+			ws.send(content)
+		t=Timer(1800,HandleData)
 		t.start()
 	HandleData()
 

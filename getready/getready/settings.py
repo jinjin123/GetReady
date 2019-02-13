@@ -16,10 +16,13 @@ NEWSPIDER_MODULE = 'getready.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'getready (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'
 
+CONCURRENT_REQUESTS = 1 #并发数
+DOWNLOAD_DELAY = 5  #为了防止IP被封，我们5秒请求一次
+HTTPERROR_ALLOWED_CODES = [403] #上面报的是403，就把403加入
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 # SCHEDULER = "getready.scheduler.Scheduler"
 # DUPEFILTER_CLASS = "getready.dupefilter.RFPDupeFilter"
 
