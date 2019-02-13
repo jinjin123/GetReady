@@ -1,6 +1,6 @@
 ###Descripe
 Python3.5
-just notice any cartorn were ready let me know .
+just notice any cartorn were ready let me know  and  let my home PC download  .
 
 ###Step: Mac
 pip install scrapy
@@ -17,13 +17,16 @@ start websocket server
 ./chat &
 
 ###schema
-![demo](https://github.com/jinjin123/GetReady/blob/master/cartoon.png)
+![demo](https://github.com/jinjin123/GetReady/blob/master/cartoon.pdf)
 ![demo](https://github.com/jinjin123/GetReady/blob/master/macclient.png)
 ![demo](https://github.com/jinjin123/GetReady/blob/master/recivedmsg.png)
 
 #client
 source venv/bin/activate
 python ScmGUI.py
+
+###[ home windows7 python2.7 pywin32  and code ]
+(https://github.com/jinjin123/VirtualOpeation)
 ########
 
 ```
