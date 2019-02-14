@@ -11,10 +11,10 @@ def on_open(ws):
 def on_error(error):
 	print error
 	
-def on_message(msg):
+def on_message(ws,message):
 	##bt resource
 	xld = XunLeiDownloader()
-	xld.startDownload(msg)
+	xld.startDownload(message)
 def on_close(ws):
 	ws.close()
 		
@@ -22,6 +22,7 @@ if __name__ == '__main__':
 	##debug
     websocket.enableTrace(False)
     ws = websocket.WebSocketApp("ws://" + '0.0.0.0' + ":4000/",
+                                on_message = on_message,
                               on_error = on_error,
                               on_close = on_close)
 

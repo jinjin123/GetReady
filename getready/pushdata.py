@@ -14,7 +14,7 @@ def on_open(ws):
 			if time['title']:
 				content += time['title']+'|'+time['bt'] +','
 		ws.send(content)
-		t=Timer(1800,HandleData)
+		t=Timer(10,HandleData)
 		t.start()
 	HandleData()
 
