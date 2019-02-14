@@ -3,14 +3,14 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"gopkg.in/olahol/melody.v1"
- //       "fmt"
-	//"net/http"
+     //  "fmt"
 )
 
-type FOO struct{
+//type FOO struct{
 	//TIME string  `json:"time" binding:"required"`
-	DATA []string `json:"data" binding:"required"`
-}
+//	DATA []string `json:"data" binding:"required"`
+//}
+
 
 func main() {
 	r := gin.Default()
@@ -40,4 +40,6 @@ func main() {
 
 	r.Run(":4000")
 }
+
+
 

@@ -186,9 +186,10 @@ class Client(QDialog):
     def sendMsgToServer(self):
         # message =self.sendTextEdit.toPlainText()
         message =self.sendTextEdit.currentText()
+        msg = message.split('|')[1]
         # url = QUrl('ws://0.0.0.0:5000/')
         # self.changeMsg.open(url)
-        self.changeMsg.sendTextMessage(message)
+        self.changeMsg.sendTextMessage(msg)
         # self.webSocket.sendTextMessage(message)
 
     def CreateNewConn(self):
