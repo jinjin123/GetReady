@@ -207,7 +207,7 @@ class Client(QDialog):
         # format_url = 'ws://{}:{}/websocket/master/{}/{}'.format(host,port,'xiangjqjngkljjkl12345',task_code)
         format_url = 'ws://{}:{}/'.format(host,port)
         request_url = QUrl(format_url)
-        url = QUrl('ws://0.0.0.0:4000/')
+        url = QUrl('ws://{}:4000/').format(host)
         self.changeMsg.open(url)
         self.webSocket.open(request_url)
 
