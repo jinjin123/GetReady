@@ -20,6 +20,11 @@ class QuotesSpider(scrapy.Spider):
                 if len(quote.css('td.td2').xpath('.//a[2]/@href').extract()) >0:
                     for nt in quote.css('td.td2').xpath('.//a[2]/@href').extract():
                         yield scrapy.Request(base_url.format(nt), dont_filter=True, callback=self.parse_page)
+             else:
+                if quote.css('caption::text').extract_first().encode('utf-8').find("昨日") > -1:
+                    if len(quote.css('td.td2').xpath('.//a[2]/@href').extract()) >0:
+                        for nt in quote.css('td.td2').xpath('.//a[2]/@href').extract():
+                            yield scrapy.Request(base_url.format(nt), dont_filter=True, callback=self.parse_page)
 
     def parse_page(self,response):
 		yield{

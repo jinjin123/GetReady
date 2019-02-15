@@ -1,20 +1,23 @@
 # -*- coding: UTF-8 -*-
-import websocket
-import os,io
-import json,time
+import io
+import json
+import os
 from threading import Timer
+import time as tt
+import websocket
 
 
 def on_open(ws):
 	def HandleData():
 		os.system("rm -rf output.json;scrapy crawl quotes -o  output.json")
 		content = ''
+		tt.sleep(1)
 		f = json.load(io.open("output.json", encoding='utf-8'))
 		for time in f:
 			if time['title']:
 				content += time['title']+'|'+time['bt'] +','
 		ws.send(content)
-		t=Timer(10,HandleData)
+		t=Timer(1800,HandleData)
 		t.start()
 	HandleData()
 
@@ -33,7 +36,7 @@ def on_close(ws):
 if __name__ == '__main__':
 	#debug
 	websocket.enableTrace(False)
-	ws = websocket.WebSocketApp("ws://" + '0.0.0.0' + ":5000/",
+	ws = websocket.WebSocketApp("ws://" + '0.0.0.0 + ":5000/",
 								on_error = on_error,
 								on_close = on_close)
 	
