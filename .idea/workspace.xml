@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f8bb48b-997e-419e-a1cc-c40ab0d04f37" name="Default" comment="k">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getready/getready/spiders/riju.py" afterPath="$PROJECT_DIR$/getready/getready/spiders/riju.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getready/pushdata.py" afterPath="$PROJECT_DIR$/getready/pushdata.py" />
     </list>
     <ignored path="GetReady.iws" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="pushdata.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getready/pushdata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            <state relative-caret-position="212">
+              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -40,7 +38,7 @@
       <file leaf-file-name="riju.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getready/getready/spiders/riju.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="77">
               <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
               <folding />
             </state>
@@ -700,7 +698,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getready/getready/spiders/riju.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="77">
           <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding />
         </state>
@@ -708,8 +706,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getready/pushdata.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        <state relative-caret-position="212">
+          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
           </folding>

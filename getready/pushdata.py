@@ -36,7 +36,7 @@ def on_close(ws):
 if __name__ == '__main__':
 	#debug
 	websocket.enableTrace(False)
-	ws = websocket.WebSocketApp("ws://" + '0.0.0.0 + ":5000/",
+	ws = websocket.WebSocketApp("ws://" + '0.0.0.0' + ":5000/",
 								on_error = on_error,
 								on_close = on_close)
 	
