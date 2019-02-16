@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"gopkg.in/olahol/melody.v1"
-       // "fmt"
+        //"fmt"
 	//"net/http"
 )
 
@@ -34,7 +34,7 @@ func main() {
 
 
 	m.HandleMessage(func(s *melody.Session, msg []byte) {
-		//fmt.Println(string(msg[:]))
+		//fmt.Println(len(msg))
 		m.Broadcast(msg)
 	})
 

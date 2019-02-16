@@ -5,7 +5,14 @@ just notice any cartorn were ready let me know  and  let my home PC download  .
 ###ALERT
 the go lib websocket maxSize is 512,so when you send outsize data that websocket will close and not recv msg,
 you need to  change /Users/wupeijin/go/src/gopkg.in/olahol/melody.v1/config.go 		MaxMessageSize:    4096,
-		MessageBufferSize: 4096, and rebuild your go program
+		MessageBufferSize: 4096, and rebuild your go program, if spider too slow,not play with websocket  in 1/min will happen  [Errno 32] Broken pipe
+	return &Config{
+		WriteWait:         600 * time.Second,
+		PongWait:          600 * time.Second,
+		PingPeriod:        (600 * time.Second * 9) / 10,
+		MaxMessageSize:    4096,
+		MessageBufferSize: 4096,
+	}
 
 
 ###Step: Mac

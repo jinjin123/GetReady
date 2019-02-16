@@ -24,7 +24,7 @@ HTTPERROR_ALLOWED_CODES = [403] #上面报的是403，就把403加入
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 # SCHEDULER = "getready.scheduler.Scheduler"
-# DUPEFILTER_CLASS = "getready.dupefilter.RFPDupeFilter"
+#DUPEFILTER_CLASS = "getready.dupefilter.RFPDupeFilter"
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -38,7 +38,7 @@ ROBOTSTXT_OBEY = False
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False

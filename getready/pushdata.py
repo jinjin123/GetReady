@@ -5,18 +5,26 @@ import os
 from threading import Timer
 import time as tt
 import websocket
+import subprocess
 
 
 def on_open(ws):
 	def HandleData():
-		os.system("rm -rf output.json;scrapy crawl quotes -o  output.json")
 		content = ''
-		tt.sleep(1)
-		f = json.load(io.open("output.json", encoding='utf-8'))
-		for time in f:
-			if time['title']:
-				content += time['title']+'|'+time['bt'] +','
-		ws.send(content)
+		ps = subprocess.Popen("rm -rf output.json;scrapy crawl quotes -o  output.json",shell=True,stderr=subprocess.PIPE)
+		ps.wait()
+		if ps.returncode ==0:
+			try:
+				with open("output.json","r")as b:
+					if len(b.read()) > 0:
+						f = json.loads(b.read())
+						for time in f:
+							if time['title']:
+								content += time['title']+'|'+time['bt'] +','
+				ws.send(content)
+				b.close()
+			except Exception as e:
+				print e
 		t=Timer(1800,HandleData)
 		t.start()
 	HandleData()
