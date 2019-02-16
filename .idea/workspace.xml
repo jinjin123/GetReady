@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f8bb48b-997e-419e-a1cc-c40ab0d04f37" name="Default" comment="k">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chat.go" afterPath="$PROJECT_DIR$/chat.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getready/getready/settings.py" afterPath="$PROJECT_DIR$/getready/getready/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getready/getready/spiders/riju.py" afterPath="$PROJECT_DIR$/getready/getready/spiders/riju.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getready/pushdata.py" afterPath="$PROJECT_DIR$/getready/pushdata.py" />
     </list>
     <ignored path="GetReady.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,20 +35,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="riju.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="riju.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getready/getready/spiders/riju.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="20" column="74" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
+            <state relative-caret-position="232">
+              <caret line="18" column="81" selection-start-line="18" selection-start-column="81" selection-end-line="18" selection-end-column="81" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pushdm.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pushdm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getready/pushdm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-263">
+            <state relative-caret-position="165">
               <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
@@ -123,9 +118,9 @@
         <option value="$PROJECT_DIR$/getready/dm.json" />
         <option value="$PROJECT_DIR$/getready/getready/spiders/dm.py" />
         <option value="$PROJECT_DIR$/getready/pushdm.py" />
-        <option value="$PROJECT_DIR$/getready/getready/spiders/riju.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/getready/pushdata.py" />
+        <option value="$PROJECT_DIR$/getready/getready/spiders/riju.py" />
       </list>
     </option>
   </component>
@@ -683,14 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getready/getready/spiders/riju.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="20" column="74" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ScmGUI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2017">
@@ -713,11 +700,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getready/pushdm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-263">
+        <state relative-caret-position="165">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getready/getready/spiders/riju.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="18" column="81" selection-start-line="18" selection-start-column="81" selection-end-line="18" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
