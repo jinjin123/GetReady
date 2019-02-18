@@ -22,7 +22,7 @@ class QuotesSpider(scrapy.Spider):
              # 'http://zhuixinfan.com/main.php?mod=viewresource&sid=9981'
         ]
         for url in urls:
-            yield scrapy.Request(url=url,cookies=cookies,callback=self.parse)
+            yield scrapy.Request(url=url,callback=self.parse)
 
     def parse(self, response):
         base_url = 'http://www.comicat.org/{0}'
